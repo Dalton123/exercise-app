@@ -49,7 +49,6 @@ function App() {
       <div className="todo">
         Todo list
         <ul>
-          <li>Feature: Add selected exercises to routine</li>
           <li>Feature: Add loading spinner</li>
         </ul>
       </div>
@@ -64,11 +63,14 @@ function App() {
       </div>
       <div className="exercises">
         {filteredExercises.map((d) => (
-          <Exercise data={d} key={d.id} />
+          <Exercise data={d} key={d.id} routine={routine} setRoutine={setRoutine} />
         ))}
       </div>
       <div className="routine">
-        <div className="count">8</div>
+        <h2>Routine</h2>
+        {routine.map((d, index) => (
+          <p key={index}>{d.name}</p>
+        ))}
       </div>
     </div>
   );

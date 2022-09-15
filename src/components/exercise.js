@@ -1,10 +1,23 @@
 import React, { useState } from "react";
-export default function Exercise({ data }) {
-  const [toggled, setToggled] = useState(false)
+export default function Exercise({ data, routine, setRoutine }) {
+  const [toggled, setToggled] = useState(false);
+
+  function toggle() {
+    const alreadyExists = routine.includes(data);
+    setToggled((prev) => !toggled);
+
+    if (!alreadyExists) {
+      setRoutine((prev) => [...prev, data]);
+    } else {
+      setRoutine(prev => routine.filter((d) => d.name !== data.name))
+    }
+  }
   return (
     <div className="exercise-details">
-      <div className="check">{!toggled ? "➕" : "❌"}</div>
-      {data.category.name && <div className="category">{data.category.name}</div>}
+      <div onClick={toggle} className={`check ${toggled ? "yes" : "no"}`}></div>
+      {data.category.name && (
+        <div className="category">{data.category.name}</div>
+      )}
       <h3>{data.name}</h3>
       <div dangerouslySetInnerHTML={{ __html: data.description }} />
       {data.images.length > 0 && (
