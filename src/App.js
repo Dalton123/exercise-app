@@ -50,6 +50,7 @@ function App() {
         Todo list
         <ul>
           <li>Feature: Add loading spinner</li>
+          <li>Styling</li>
         </ul>
       </div>
       <div className="header">
