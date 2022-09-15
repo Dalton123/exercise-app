@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #30475e;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.App {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 4rem;
+}
+.header h1 {
+  padding-bottom: 2rem;
+  margin: 0;
+}
+.header input {
+  padding: 10px;
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #e2e2e2;
+  color: #1b1b1b;
+}
+.header input:focus {
+  outline-color: #ffb951;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.exercises {
+  padding: 0 2rem 2rem;
+  display: grid;
+  grid-template: auto auto auto/auto auto auto;
+  gap: 16px;
 }
+.exercises .exercise-details {
+  position: relative;
+  border-radius: 8px;
+  background-color: #222831;
+  padding: 24px;
+}
+.exercises .exercise-details .check {
+  padding: 10px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+.exercises .exercise-details .category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 16px;
+  border: 1px solid white;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.exercises .exercise-details h3 {
+  font-size: 1.5rem;
+}
+.exercises .exercise-details ol, .exercises .exercise-details ul, .exercises .exercise-details li, .exercises .exercise-details p {
+  list-style-position: inside;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0 0 0.7rem;
+}
+.exercises .exercise-details--image {
+  margin-top: 2em;
+  position: relative;
+  height: 200px;
+}
+.exercises .exercise-details--image img {
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.exercises .exercise-details--image img:nth-of-type(1) {
+  animation: fade 1s 0s infinite alternate;
+}
+.exercises .exercise-details--image img:nth-of-type(2) {
+  animation: fade 1s 0.75s infinite alternate;
+}
+
+.routine {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+.routine .count {
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 12px 16px;
+  color: #222831;
+}
+
+.todo {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=App.css.map */
